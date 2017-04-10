@@ -269,9 +269,7 @@ examples:
       Embulk.new_plugin(name, language, category)
 
     when :migrate
-      path = ARGV[0]
-      require 'embulk/command/embulk_migrate_plugin'
-      Embulk.migrate_plugin(path)
+      (org.embulk.cli.EmbulkMigrate.new).migratePlugin(ARGV[0], org.embulk.EmbulkVersion::VERSION)
 
     when :selfupdate
       require 'embulk/command/embulk_selfupdate'
